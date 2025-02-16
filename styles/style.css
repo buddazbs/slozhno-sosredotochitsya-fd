@@ -2,24 +2,23 @@
 
 .page {
   background-color: var(--background-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: var(--accent-font);
+  font-size: var(--accent-font-size-rem);
 }
 
 .header {
   position: relative;
   display: grid;
+  background-image: var(--background-image);
   grid-template-rows: 1fr min-content 1fr;
   justify-items: end;
   align-items: center;
   padding: var(--accent-padding);
-  block-size: 100vh;
   min-block-size: 668px;
-}
-
-.header__background {
-  background-image: var(--background-image);
-  background-position: center;
-  background-size: cover;
 }
 
 .decorated-zone::after {
@@ -53,7 +52,6 @@
 .header__rec::before {
   content: 'rec';
   color: var(--additional-color);
-  font-size: var(--accent-font-size);
   text-transform: uppercase;
 }
 
@@ -70,9 +68,13 @@
 }
 
 .header__theme-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  max-width: 70px;
+  gap: 13px;
+}
+
+.header__theme-menu-item {
+  width: 70px;
 }
 
 .header__theme-menu-button {
@@ -111,11 +113,13 @@
   color: var(--title-color);
   font-weight: 700;
   font-size: var(--additional-font-size);
-  line-height: 95.7px;
+  line-height: 0.825em;
   text-shadow: 4px 4px var(--shadow-color);
 }
 
 .header__paragraph {
+  display: flex;
+  flex-direction: column;
   font-weight: 700;
   font-size: var(--accent-font-size);
   line-height: 23.4px;
@@ -143,8 +147,12 @@
   margin-block-end: var(--section-element-block-end);
   color: var(--additional-color);
   font-weight: 700;
-  font-size: var(--accent-font-size);
+  font-size: var(--accent-font-size-rem);
   line-height: 23.4px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .section__subtitle {
@@ -188,10 +196,6 @@
   line-height: 23.4px;
 }
 
-.section__subtitle.section__pictures-subtitle {
-  margin-block-end: var(--section-pictures-element-block-end);
-}
-
 .section__pictures-container {
   display: grid;
   row-gap: 10px;
@@ -211,7 +215,7 @@
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
-  margin-block-start: var(--footer-margin-block-start);
+  margin-block-start: 20px;
   max-block-size: 100vh;
   min-block-size: 668px;
 }
@@ -258,7 +262,7 @@
     column-gap: 20px;
   }
 
-   .section__grid-container {
+  .section__grid-container {
     grid-column: 2 / 3;
   }
 
