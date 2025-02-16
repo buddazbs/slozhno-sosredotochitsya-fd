@@ -255,6 +255,14 @@
   .header__paragraph {
     inline-size: 50%;
   }
+  .section{
+    display: grid;
+  }
+
+  .section__title {
+    width: 258px;
+    margin-bottom: 43px;
+  }
 
   .section__grid-wrapper {
     display: grid;
@@ -262,8 +270,12 @@
     column-gap: 20px;
   }
 
-  .section__grid-container {
-    grid-column: 2 / 3;
+  .section:nth-of-type(1) .section__grid-container {
+    grid-column: 2 / 4;
+  }
+
+  .section:nth-of-type(3) .section__grid-container {
+    grid-column: 2 / 4;
   }
 
   .section__reduced-concentration-title {
@@ -312,6 +324,7 @@
 
   .footer {
     min-block-size: 1024px;
+    margin-block-start: 40px;
   }
 }
 
@@ -327,7 +340,7 @@
   }
 
   .header__theme-menu-list {
-    flex-direction: row;
+    grid-auto-flow: column;
     gap: 10px;
   }
 
