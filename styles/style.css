@@ -7,7 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   font-size: var(--accent-font-size-rem);
 }
 
@@ -94,11 +94,11 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--additional-color-opacity);
+  outline: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--additional-color);
+  outline: 1px solid currentColor;
   pointer-events: none;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--additional-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .header__title {
@@ -152,7 +152,6 @@
   font-size: var(--accent-font-size-rem);
   line-height: 23.4px;
   overflow-wrap: break-word;
-  hyphens: auto;
   word-wrap: break-word;
   max-width: 100%;
 }
@@ -219,6 +218,7 @@
   align-items: center;
   margin-block-start: 20px;
   block-size: 100vh;
+  /* Позиционируется только при указании  max-block-size*/
   max-block-size: 668px;
 }
 
@@ -272,11 +272,7 @@
     column-gap: 20px;
   }
 
-  .section:nth-of-type(1) .section__grid-container {
-    grid-column: 2 / 4;
-  }
-
-  .section:nth-of-type(3) .section__grid-container {
+  .section__grid-container--wide {
     grid-column: 2 / 4;
   }
 
@@ -296,7 +292,7 @@
 
   .section__pictures-container {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-auto-flow: dense;
     gap: 20px;
@@ -306,22 +302,22 @@
     margin-block-end: 0;
   }
 
-  .section__image:nth-child(1) {
+  .section__image-sunset {
     grid-column: span 2;
   }
 
-  .section__image:nth-child(2) {
+  .section__image-street {
+    grid-column: span 2;
+  }
+
+  .section__image-ice-cream {
     grid-column: 3;
     grid-row: span 2;
   }
 
-  .section__image:nth-child(3) {
+  .section__image-tape {
     grid-column: 1;
     grid-row: span 2;
-  }
-
-  .section__image:nth-child(5) {
-    grid-column: span 2;
   }
 
   .footer {
@@ -357,7 +353,7 @@
     grid-auto-columns: auto;
   }
 
-  .section_grid-wrapper:nth-of-type(2) .section__grid-container {
+  .section__grid-container--concentration {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -368,10 +364,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1.25rem;
-  }
-
-  .section__grid-container {
-    grid-column: span 2;
   }
   
   .section__reduced-concentration-title {
