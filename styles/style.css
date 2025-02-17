@@ -17,9 +17,10 @@
   grid-template-rows: 1fr min-content 1fr;
   justify-items: end;
   align-items: center;
-  padding: 10px 10px 109px 10px;
-  min-block-size: 668px;
+  padding: var(--accent-padding);
   block-size: 100vh;
+  /* Позиционируется только при указании  max-block-size*/
+  max-block-size: 668px;
 }
 
 .decorated-zone::after {
@@ -40,7 +41,7 @@
   border-block-end: 1px solid var(--additional-color);
   inline-size: 25px;
   block-size: 25px;
-  inset-block-end: 108px;
+  inset-block-end: 10px;
   inset-inline-start: 10px;
 }
 
@@ -133,7 +134,7 @@
 
 .main {
   padding: var(--accent-padding);
-  margin-block: -4.3rem;
+  padding-block-start: var(--padding-block-start);
 }
 
 .section:not(:last-of-type) {
@@ -216,9 +217,9 @@
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
-  margin-block-start: 89px;
-  min-block-size: 668px;
+  margin-block-start: 20px;
   block-size: 100vh;
+  max-block-size: 668px;
 }
 
 .footer__title {
@@ -227,7 +228,6 @@
   font-size: var(--additional-font-size);
   line-height: 95.7px;
   text-shadow: 2px 2px var(--shadow-color);
-  transform: translateY(-45px);
 }
 
 @media (width >= 768px) {
@@ -381,9 +381,4 @@
   .footer {
     min-block-size: 768px;
   }
-}
-
-:root.theme-light .header__rec::before,
-:root.theme-light .header__rec::after {
-  display: none;
 }

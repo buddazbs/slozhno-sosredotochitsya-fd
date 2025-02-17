@@ -11,7 +11,7 @@
   --shadow-color: #FF0070;
   --additional-color-opacity: rgba(255,0,112, .4);
   --title-color: #DB00FF;
-  --accent-padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);;
+  --accent-padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   --padding-block-start: 40px;
   --section-block-end: 50px;
   --section-element-block-end: 20px;

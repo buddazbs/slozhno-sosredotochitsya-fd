@@ -36,7 +36,7 @@
     --additional-color: #353430;
   }
   
-  .theme-auto .header__bulb {
+  .theme-auto .header__rec {
     display: none;
   }
   
@@ -58,7 +58,7 @@
   --additional-color: #353430;
 }
 
-.theme-light .header__bulb {
+.theme-light .header__rec {
   display: none;
 }
 
