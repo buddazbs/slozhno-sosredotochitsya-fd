@@ -18,9 +18,8 @@
   justify-items: end;
   align-items: center;
   padding: var(--accent-padding);
-  block-size: 100vh;
-  /* Позиционируется только при указании  max-block-size*/
-  max-block-size: 668px;
+  min-block-size: 668px;
+  block-size: auto;
 }
 
 .decorated-zone::after {
@@ -217,9 +216,8 @@
   justify-content: center;
   align-items: center;
   margin-block-start: 20px;
-  block-size: 100vh;
-  /* Позиционируется только при указании  max-block-size*/
-  max-block-size: 668px;
+  min-block-size: 668px;
+  block-size: auto;
 }
 
 .footer__title {
